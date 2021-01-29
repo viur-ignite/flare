@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* ICON COMPLEX */
+
+// Prefixes and objects:
+// i
+// .i
+// .icon
+
+:root {
+  --custom-color1: @mainColor;
+  --custom-color2: @gradientColor;
+}
+
+.icon {
+  .icon();
+}
+
+.i {
+  flex: 0 0 auto;
+  .i(@borderRadius: 50%;);
+
+  &--app {
+    border-radius: @iconBorderRadius;
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &--medium {
+    font-size: 2em;
+  }
+
+  &--large {
+    font-size: 4.9em;
+  }
+
+  &--JF {
+    background: linear-gradient(to top right, @mainColor 0%, @gradientColor 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--JF-custom {
+    background: linear-gradient(to top right, @mainColor 0%, @gradientColor 100%);
+    background: linear-gradient(to top right, ~'var(--custom-color1)' 0%, ~'var(--custom-color2)' 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--50 {
+    & svg,
+    & .icon,
+    & img {
+      width: 50%;
+      height: 50%;
+      border-radius: 0;
+    }
+  }
+
+  &--feed {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #ccc;
+  }
+
+  &--success {
+    .colorizeI(@color: @successColor);
+  }
+  &--warn {
+    .colorizeI(@color: @warnColor);
+  }
+  &--fail {
+    .colorizeI(@color: @failColor);
+  }
+  &--hint {
+    .colorizeI(@color: @hintColor);
+  }
+  &--white {
+    .colorizeI(@color: #fff);
+  }
+  &--color {
+    background-color: @mainColor; // provides fallback.
+    background-color: ~'var(--custom-color)';
+    color: @clearColor;
+  }
+  & + .icon-box-wrap {
+    margin-left: @innerSpace;
+  }
+
+  & .badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+
+

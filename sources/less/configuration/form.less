@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/* Forms und Inputs und Lables und so  */
+
+@form-padding: @defaultPadding;
+@form-margin: @defaultMargin;
+@form-inputMaxWidth: 100%;
+
+// Shadows:
+@form-shadow: 0;
+@form-shadowHover: 0;
+@form-shadowColor: transparent;
+
+.input {
+  .input();
+}
+
+.label {
+  .label();
+}
+
+.select {
+  .select();
+}
+
+.textarea {
+  .textarea();
+}
+
+.switch {
+  .switch();
+}
+
+.check {
+  .check();
+}
+
+.radio {
+  .radio();
+}
+
+.option-group {
+  .option-group();
+}
+
+.form {
+  .form();
+}
+
+.input-group {
+  .input-group();
+}
+
+.input-group--block {
+  .input-group--block();
+}
+
+.input-group--bar {
+  .input-group--bar();
+}
+
+.search-bar {
+  flex: 0;
+  margin-bottom: 40px;
+}
+
+/* Client Add */
+.flr-bone--active-from {
+  margin-right: @innerSpace;
+}
+
+.flr-bone--zip {
+  flex-basis: 30%;
+  margin-right: @innerSpace;
+}
+
+/* Asset Add */
+.flr-bone--lat {
+  margin-right: @innerSpace;
+}
+
+.picture-add {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 4;
+  background: linear-gradient(to bottom right, @mainColor 0%, @gradientColor 100%);
+  border-radius: 5px;
+
+  .mq-max(@breakSmall, {
+    grid-column: 1 / span 6;
+
+    &:after{
+      content: '';
+      display: table;
+      padding-bottom: 65%;
+    }
+  });
+}
+
+.input-company {
+  grid-column: 3 / span 4;
+  grid-row: 1;
+}
+
+.input-firstname {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+
+.input-lastname{
+  grid-column: 5 / span 2;
+  grid-row: 2;
+}
+
+.input-street{
+  grid-column: 3 / span 3;
+  grid-row: 3;
+}
+
+.input-streetnumber{
+  grid-column: 6 / span 1;
+  grid-row: 3;
+}
+
+.input-postcode{
+  grid-column: 3 / span 1;
+  grid-row: 4;
+}
+
+.input-city{
+  grid-column: 4 / span 3;
+  grid-row: 4;
+}
+
+.input-telephone{
+  grid-column: 3 / span 4;
+}
+
+.input-fax{
+  grid-column: 3 / span 4;
+}
+
+.input-mobile{
+  grid-column: 3 / span 4;
+}
+
+.pdf-view{
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 6;
+}
+
+.select-belegtyp{
+  grid-column: 4 / span 3;
+}
+
+.input-partername{
+  grid-column: 4 / span 3;
+}
+
+.input-partner-account{
+  grid-column: 4 / span 3;
+}
+
+.input-partner-number{
+  grid-column: 4 / span 3;
+}
+
+.input-arrival-date{
+  grid-column: 4 / span 3;
+}
+
+.input-billing-date{
+  grid-column: 4 / span 3;
+}
+
+.input-billing-billingnumber{
+  grid-column: 4 / span 3;
+}
+
+.input-price{
+  grid-column: 4 / span 2;
+}
+
+.input-currency{
+  grid-column: 6 / span 1;
+}
+
+.input-billing-billingnumber{
+  grid-column: 4 / span 3;
+}
+
+.select-tax{
+  grid-column: 4 / span 3;
+}
+
+.input-iban{
+  grid-column: 4 / span 3;
+}
+
+.input-bic{
+  grid-column: 4 / span 3;
+}
+
+.input-sconto{
+  grid-column: 4 / span 3;
+}
+
+.input-due-date{
+  grid-column: 4 / span 3;
+}
+
+.search-input{
+  background-color: #fff;
+  flex: 1;
+  margin: 5px;
+}
+
+

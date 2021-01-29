@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* Basics  */
+
+p{
+  margin-bottom: 0 !important;
+  margin: 0 0 0 0;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+.flex-spacer{
+  flex: 1 1 auto;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.ul-list {
+  list-style: disc;
+  padding-left: 20px;
+  font-weight: normal;
+  margin: .15em 0;
+
+  li{
+    padding: .15em 0;
+  }
+}
+
+.subline {
+  font-family: @headFonts;
+  color: @textColor;
+}
+
+
+.back-button{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7em;
+}
+
+.aFake{
+  color: @mainColor;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.after-arrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-left: 10px;
+  color: #ccc;
+  font-size: 1.5em;
+  transition: all ease .3s;
+
+  .icon{
+    transform: rotate(180deg);
+  }
+}
+
+.dashboard-head{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 10px;
+  border-top-left-radius: 4.9em;
+  border-bottom-left-radius:  4.9em;
+  margin: 10px 0;
+  position: relative;
+
+  .mq-max(@breakSmall,{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:  10px;
+    padding-top: 50px;
+    margin-top: 30px;
+  });
+}
+
+.dashboard-head-wrap{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+
+  .btn{
+    align-self: flex-start;
+    margin: 0 0 0 auto;
+  }
+
+  .mq-min(@breakSmall,{
+    text-align: left;
+  });
+}
+
+.dashboard-txt{
+  margin-bottom: .7em;
+  font-weight: normal;
+}
+
+.dashboard-headline{
+  font-size: 1.5em;
+  margin-bottom: .35em;
+  margin-right: auto;
+}
+
+.profile-pic{
+  min-width: 130px;
+  width: 130px;
+  border-radius: 65px;
+  background-position: center;
+  background-size: cover;
+  margin-right: 20px;
+
+  .mq-max(@breakSmall,{
+    position: absolute;
+    min-width: 90px;
+    width: 90px;
+    border-radius: 45px;
+    top: -30px;
+    left: calc(50% - 45px);
+  });
+
+  &:after{
+    content: '';
+    display: table;
+    padding-bottom: 100%;
+  }
+}
+
+.icon-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon{
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+hr{
+  box-shadow: none !important;
+}

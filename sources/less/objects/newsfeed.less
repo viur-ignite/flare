@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+.newsfeed-list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.newsfeed-wrap{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  width: 100%;
+  margin-top: @outerSpace;
+  & > .i {
+    align-self: flex-start;
+    margin-right: @innerSpace;
+  }
+}
+
+.newsfeed-message{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+
+  .mq-min(@breakSmall, { margin-left: 15px; });
+}
+
+.newsfeed-bubble-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: @outerSpace;
+  flex: 1 1 100%;
+}
+
+.newsfeed-bubble{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+
+  p{
+    margin-bottom: @innerSpace !important;
+  }
+
+  .mq-min(@breakSmall,{
+    flex-direction: row;
+
+    &:before{
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 25px;
+      left: -15px;
+      border-style: solid;
+      border-width: 10px 15px 10px 0;
+      border-color: transparent #fff transparent transparent;
+    }
+  });
+
+  .btn:not(:last-child){
+    margin-right: @innerSpace;
+  }
+}
+
+.newsfeed-txt{
+  font-family: @headFonts;
+  font-size: 1.2em;
+  color: @complementColor;
+  margin-bottom: @innerSpace;
+}
+
+.newsfeed-actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.newsfeed-questionaire{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-start;
+  font-size: .8em;
+  opacity: .5;
+  transition: all ease .3s;
+  padding: @innerSpace 0;
+
+  .btn:not(:last-child){
+    margin-right: @innerSpace;
+  }
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.newsfeed-questionaire-actions{
+  margin-left: @innerSpace;
+}
+
+.newsfeed-origin-text{
+  font-size: .8em;
+  color: #bbb;
+  margin-bottom: @innerSpace;
+}
+
+.newsfeed-origin{
+  .mq-max(@breakSmall,{
+    display: none;
+  });
+}
+
+
+.newsfeed-img{
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  .mq-min(@breakSmall,{
+    flex: 0 0 25%;
+    height: 100%;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+  });
+}

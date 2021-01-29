@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* CONVERSATION */
+
+// Prefixes and objects:
+// .conversation-
+// .message-
+
+.conversation {margin-top: @outerSpace;}
+.conversation-indicator {font-size: .8rem;}
+
+.message {}
+.message-sender {align-self: flex-start;}
+.message-content {
+  &--senderleft {
+    border-radius: 0 @defaultBorderRadius @defaultBorderRadius @defaultBorderRadius;
+  }
+  &--senderright {
+    border-radius: @defaultBorderRadius 0 @defaultBorderRadius @defaultBorderRadius;
+  }
+  & .item:first-child {
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+  }
+  & .item:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+}

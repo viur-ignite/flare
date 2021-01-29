@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* BUTTONS */
+
+// Prefixes and objects:
+// .btn-
+// .btnGroup
+
+.badge {
+  .badge(
+      @color: @complementColor,
+      @borderRadius: .2em
+    );
+  &--primary {
+    .colorizeBadge(
+      @color: @successColor
+    );
+  }
+}
+
+.marker {
+  .marker(
+      @color: @complementColor,
+      @borderRadius: .2em
+    );
+  &--primary {
+    .colorizeMarker(
+      @color: @successColor
+    );
+  }
+  &--fail {
+    .colorizeMarker(
+      @color: @failColor
+    );
+  }
+
+  &--warn {
+    .colorizeMarker(
+      @color: @warnColor
+    );
+  }
+}
+
+

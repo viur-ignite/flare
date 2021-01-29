@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* CONTENTLIST */
+
+// Prefixes and objects:
+// .contentlist-
+
+
+.contentlist {
+  &-header {
+    width: 100%;
+    margin-top: @outerSpace;
+    margin-bottom: @innerSpace;
+    padding-bottom: @innerSpace/2;
+    border-bottom: 1px solid @textColor;
+  }
+
+  &-headline {
+    & .icon:first-child {
+      margin-right: 5px;
+      font-size: 1.2em;
+    }
+  }
+
+  &-collapse {
+    transition: transform .3s ease;
+    &.is-open {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &-body {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .3s ease;
+    &.is-open {
+      overflow-y: auto;
+      max-height: 200vh;
+    }
+  }
+}

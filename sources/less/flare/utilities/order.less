@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* ORDER UTILITY CLASSES */
+
+.o {
+  .loop(@orderNames, @counter) when (@counter > 0) {
+    .loop(@orderNames, @counter - 1);
+    @orderName: extract(e(@orderNames), @counter);
+    &--@{orderName} {
+      .order(@orderName,0);
+    }
+  }
+
+  .loop(@orderOrder, length(@orderOrder));
+}

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* MESSAGES and ALERTS */
+
+.msg {
+  .genericMsg(@color: @mainColor,
+    @borderWidth: 1px,
+    @borderRadius: 4px);
+  background: linear-gradient(to left, fadeout(@mainColor, 10%) 0%, fadeout(@gradientColor, 10%) 100%);
+  &.popup {
+    box-shadow: none;
+  }
+}
+
+.msg--success {
+  background: none;
+  .colorizeMsg(@successColor);
+}
+
+.msg--error {
+  background: none;
+  .colorizeMsg(@failColor);
+}
+
+.msg--warning {
+  background: none;
+  .colorizeMsg(@warnColor);
+}
+
+.msg--info {
+  background: none;
+  .colorizeMsg(@hintColor);
+}
+
+.msg--progress {
+  background: none;
+  .colorizeMsg(@hintColor);
+}

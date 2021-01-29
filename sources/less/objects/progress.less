@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* PROGRESS */
+
+// Prefixes and objects:
+// .progress-
+
+.progress(
+  @color: @mainColor,
+  @backgroundColor: @defaultInputColor,
+  @borderWidth: @defaultBorderWidth,
+  @borderRadius: @defaultBorderRadius) {
+  .basicInput(@padding:0, @borderRadius:@borderRadius, @borderWidth:@borderWidth, @borderColor:#ccc);
+  overflow: hidden;
+  width: 100%;
+  &:before {
+    content: attr(value) ' %';
+    position: absolute;
+    right: 10px;
+    color: @color;
+    text-shadow:1px 1px contrast(@color);
+    font-weight: 600;
+    font-size: .5em;
+    align-self: center;
+  }
+  &:not([value="1"]){
+    cursor: progress!important;
+    &::-webkit-progress-value {
+      animation: progress-color .75s infinite ease-in-out both;
+    }
+  }
+
+  &::-webkit-progress-bar {
+    background-color: darken(@backgroundColor,10%);
+  }
+
+  &::-webkit-progress-value {
+    background-color: @color;
+    transition: 1s ease-in-out all;
+    border-top-left-radius: @borderRadius;
+    border-bottom-left-radius: @borderRadius;
+  }
+
+  &::-moz-progress-bar {
+    background-color: @color;
+  }
+
+  &--small {
+    height: .6rem;
+  }
+  &--medium {
+    height: 1.4rem;
+  }
+  &--large {
+    height: 1.8rem;
+  }
+}
+
+@keyframes progress-color {
+  0%, 100% {
+    opacity: 1;
+  } 50% {
+    opacity: .75;
+  }
+}
+
