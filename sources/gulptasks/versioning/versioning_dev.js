@@ -69,24 +69,16 @@ function rebuildVersion(gulp, plugins) {
 
 	// build new version.py
 	let stream = gulp.src(plugins.taskfolder + 'version.py')
-		.pipe(plugins.replace({
-			patterns: [{
-				match: 'version',
-				replacement: pkg.version
-			}]
-		}))
-		.pipe(plugins.replace({
-			patterns: [{
-				match: 'timestamp',
-				replacement: new Date().getTime()
-			}]
-		}))
-		.pipe(plugins.replace({
-			patterns: [{
-				match: 'name',
-				replacement: codenames[minver]
-			}]
-		}))
+		.pipe(
+			plugins.through.obj((file, enc, cb) => {
+				pytemplate = pytemplate.replace('@@version',pkg.version)
+				pytemplate = pytemplate.replace('@@timestamp',new Date().getTime())
+				pytemplate = pytemplate.replace('@@name',codenames[minver])
+
+				file.contents = Buffer.from(pytemplate)
+				cb(null, file)
+			})
+		)
 		.pipe(gulp.dest(plugins.projektfolder));
 	return stream
 }
@@ -96,10 +88,10 @@ module.exports = function (gulp, plugins) {
 	// register plugins
 	plugins.fs = require('fs');
 	plugins.bump = require('gulp-bump');
-	plugins.replace = require('gulp-replace-task');
 	plugins.semver = require('semver');
 	plugins.initfiles = initfiles;
 	plugins.rebuildVersion = rebuildVersion;
+	plugins.through = require('through2');
 
 
 	return function () {
