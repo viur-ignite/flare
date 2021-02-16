@@ -7,7 +7,7 @@ module.exports = function (gulp, plugins, options) {
 	plugins.autoprefixer = require('autoprefixer');
 	plugins.focus = require('postcss-focus');
 	plugins.nocomments = require('postcss-discard-comments');
-	plugins.nano = require('gulp-cssnano');
+	plugins.cleancss = require('gulp-clean-css');
 	plugins.jmq = require('gulp-join-media-queries');
 	plugins.stylefmt = require('gulp-stylefmt');
 
@@ -29,7 +29,7 @@ module.exports = function (gulp, plugins, options) {
 			.pipe(plugins.jmq())
 			//#fixme: .pipe(plugins.stylefmt()) // syntax formatting, stylefmt destroys background inline-svg
 			.pipe(gulp.dest(options.dest)) // save cleaned version
-			.pipe(plugins.nano({zindex: false})) // minify css
+			.pipe(plugins.cleancss({zindex: false})) // minify css
 			.pipe(plugins.rename({suffix: '.min'}))
 			.pipe(gulp.dest(options.dest)); // save minified version
 	}
