@@ -12,7 +12,7 @@ module.exports = function (gulp, plugins, options) {
 	plugins.stylefmt = require('gulp-stylefmt');
 
 	return function () {
-		gulp.task('version-dev')();
+		/*gulp.task('version-dev')();*/
 
 		return gulp.src(options.src)
 			.pipe(plugins.less({
